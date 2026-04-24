@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esmanur YILMAZ | Personal Vlog</title>
+    <meta name="description" content="Personal blog and vlog of Esmanur YILMAZ">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Floating Theme Customizer -->
+    <div class="theme-customizer glass-panel" id="themeCustomizer">
+        <button class="toggle-btn" id="themeToggleBtn"><i class="fas fa-palette"></i></button>
+        <div class="customizer-content">
+            <h3>🎨 Customize Vibe</h3>
+            <div class="color-picker-group">
+                <label for="bgColor">Background</label>
+                <input type="color" id="bgColor" value="#ffebf0">
+            </div>
+            <div class="color-picker-group">
+                <label for="primaryColor">Primary Text</label>
+                <input type="color" id="primaryColor" value="#ff4d85">
+            </div>
+            <div class="color-picker-group">
+                <label for="accentColor">Accent Color</label>
+                <input type="color" id="accentColor" value="#8c52ff">
+            </div>
+            <button id="resetThemeBtn" class="btn-small">Reset Defaults</button>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="mood-widget glass-panel">
+            Current Mood: <span id="moodDisplay">✨ Feeling Creative! 🎨</span> 
+            <button onclick="openMoodModal()" class="mood-btn">Change</button>
+        </div>
+        <div class="hero-content">
+            <h1 class="title" id="adminUnlocker" title="Double-click to unlock Edit Mode!">Esmanur YILMAZ</h1>
+            <p class="subtitle">Welcome to my colorful corner of the internet. Here you'll find my daily adventures, thoughts, and fun facts!</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- About Me Section -->
+        <section class="section about-section glass-panel">
+            <h2>About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Hi! I'm Esmanur. I love exploring new things, capturing moments through lenses, and learning quirky facts about the world. This website is my digital scrapbook where I can freely express my style—literally, feel free to change the page's color scheme with the palette button on the left!</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="mailto:esmanur@example.com" class="social-icon" title="Email Me"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="hobbies">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <h3 style="margin-bottom: 0;">My Hobbies</h3>
+                        <button id="addHobbyBtn" class="add-hobby-btn" style="padding: 4px 10px; font-size: 0.8rem; border-radius: 10px; border: 1px solid var(--accent-color); background: transparent; color: var(--accent-color); cursor: pointer;">+ Add</button>
+                    </div>
+                    <div class="badge-container" id="hobbiesContainer">
+                        <!-- Javascript will populate this list dynamically -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feed Section -->
+        <section class="section">
+            <h2>My Feed</h2>
+            <div class="feed-grid">
+                
+                <!-- Video Post -->
+                <article class="feed-card glass-panel video-post">
+                    <div class="card-media">
+                        <!-- Placeholder for a video -->
+                        <div class="video-placeholder">
+                            <i class="fas fa-play-circle"></i>
+                            <p>Daily Vlog #1</p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Vlog</span>
+                        <h3>Morning Routine in the City!</h3>
+                        <p>Starting the day with some fresh coffee and good vibes. Watch my morning unfold!</p>
+                        <span class="date">Oct 24, 2026</span>
+                    </div>
+                </article>
+
+                <!-- Fun Fact Post -->
+                <article class="feed-card glass-panel funfact-post">
+                    <div class="card-content highlight-content">
+                        <span class="tag">Fun Fact 🤔</span>
+                        <h3>Did you know?</h3>
+                        <p class="fact-text">Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible!</p>
+                    </div>
+                </article>
+
+                <!-- Photo Post -->
+                <article class="feed-card glass-panel photo-post">
+                    <div class="card-media" style="background: var(--accent-gradient);">
+                        <!-- Inline style simply for visual mock, ideally an img tag -->
+                        <div class="photo-placeholder" style="display:flex; justify-content:center; align-items:center; height:100%; width:100%; min-height: 200px; color:white; font-size: 3rem;">
+                            <i class="fas fa-camera-retro"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Photography</span>
+                        <h3>Sunset at the Park</h3>
+                        <p>Caught this amazing purple and orange sky right before dinner. Nature is the best artist!</p>
+                        <span class="date">Oct 23, 2026</span>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Guestbook / Fun Fact Submission -->
+        <section class="section guestbook-section glass-panel">
+            <h2>💌 Share a Fun Fact with Me!</h2>
+            <p>I love learning new things. Drop a fun fact (or just say hi!) and I'll read it.</p>
+            <!-- Note: Formspree URL goes here when ready -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST" class="guest-form">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="e.g., Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="fact">Your Fun Fact (or Message):</label>
+                    <textarea id="fact" name="message" rows="4" required placeholder="Type something cool..."></textarea>
+                </div>
+                <!-- This prevents bots -->
+                <input type="text" name="_gotcha" style="display:none">
+                <button type="submit" class="btn-primary">Send to Esmanur <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Esmanur YILMAZ. Made with color and joy.</p>
+    </footer>
+
+    <!-- Mood Selector Modal -->
+    <div class="modal overlay" id="moodModal">
+        <div class="modal-content glass-panel">
+            <h3>Set Your Mood</h3>
+            <p style="margin-bottom: 15px; color: var(--text-muted); font-size: 0.9rem;">Choose from defaults or create your own!</p>
+            <div id="defaultMoodsList" class="mood-list">
+                <!-- Javascript will populate this list -->
+            </div>
+            
+            <div class="custom-mood-section">
+                <h4>Or create a custom mood:</h4>
+                <div class="custom-input-group">
+                    <input type="text" id="customEmoji" class="emoji-input" placeholder="✨" maxlength="2">
+                    <input type="text" id="customMoodText" class="mood-text-input" placeholder="Write your mood...">
+                    <button id="saveCustomMoodBtn" class="btn-primary" style="padding: 10px; font-size: 0.9rem;">Set</button>
+                </div>
+            </div>
+            <button id="closeMoodModal" class="btn-small close-modal-btn">Cancel</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
